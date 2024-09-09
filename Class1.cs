@@ -1,20 +1,36 @@
-﻿namespace FirstClass1;
+﻿namespace PatientPerson;
+
 public class Patient
 {
-    // Properties
-    public string Name { get; set; }
-    public string Gender { get; set; }
-    public string BloodType { get; set; }
-    public int Age {get; set; }
-    public int MedicalRecordNumber { get; set; }
 
+    public void display()
+    {
+        Console.WriteLine("PLEASE FILL OUT INFORMATION BELOW IF POSSIBLE");
 
-
-    public Patient(string name,
-                   int age,
-                   string gender,
-                   string bloodtype);
     }
+    static void Main(string[] args)
+    {
+        Console.ReadLine();
+    }
+    public int MedicalRecordNumber { get; set; }
+    public string FirstName;
+    public DateTime Birthday;
+    public string BloodType;
+    public string CellPhone;
+    private object patient;
+    private object patientPerson;
 
+    public string Age { get { return getAge(); } }
 
-    
+    private string getAge()
+    {
+        if (Birthday == DateTime.MinValue)
+        {
+
+            return "Unknown";
+        }
+
+        return (DateTime.Now.Year - Birthday.Year).ToString();
+
+    }
+}
